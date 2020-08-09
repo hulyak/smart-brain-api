@@ -14,11 +14,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-node-js
 const db = knex({
   client: 'pg',
   connection: {
     // host: 'postgresql-spherical-79934', //localhost 127.0.0.1
-    host : process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL,
     ssl: {
     rejectUnauthorized: false
   }
