@@ -53,8 +53,8 @@ app.post('/imageUrl', (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(3030, () => {
-  console.log('app is running on port 3030');
+app.listen(process.env.PORT  || 3030, () => {
+  console.log(`app is running on port ${process.env.PORT}`);
 });
 
 //POSTGRES SQL
